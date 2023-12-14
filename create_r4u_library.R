@@ -22,7 +22,6 @@ Sys.sleep(60*60*2)
 # renv::install("openxlsx", prompt = F)
 # renv::install("lubridate", prompt = F)
 
-
 # Pakete aktualisieren ####
 renv::status()
 credentials::set_github_pat()
