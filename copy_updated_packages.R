@@ -13,8 +13,13 @@ source( r4dt::wdfind())
 dt$pfad$server <- paste0(wd$r4u)
 
 dt$pfad$library <- "library"
-dt$pfad$systime <- dir( paste0( dt$pfad$server, "/", dt$pfad$library ) )[ max( grep(20, substr( dir( paste0( dt$pfad$server, "/", dt$pfad$library ) ), 1, 2))) ]
-dt$pfad$server.lib <- paste0( dt$pfad$server, "/", dt$pfad$library, "/", dt$pfad$systime)
+
+library.all <- dir( paste0( dt$pfad$server, "/", dt$pfad$library ) )
+library.num <- library.all[ grepl("^[0-9]+$", library.all) ]
+library.20 <- library.num[ grep(20, substr(library.num, 1, 2)) ]
+lib.loc <- min(library.20)
+
+dt$pfad$server.lib <- paste0( dt$pfad$server, "/", dt$pfad$library, "/", lib.loc)
 
 # delete updated package in library
 setwd( dt$pfad$server.lib )

@@ -1017,7 +1017,7 @@
     },
     "mgcv": {
       "Package": "mgcv",
-      "Version": "1.9-0",
+      "Version": "1.9-1",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -1030,7 +1030,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "086028ca0460d0c368028d3bda58f31b"
+      "Hash": "110ee9d83b496279960e162ac97764ce"
     },
     "mime": {
       "Package": "mime",
@@ -1379,7 +1379,7 @@
       "RemoteUsername": "DrFrEdison",
       "RemoteRepo": "r4dt",
       "RemoteRef": "main",
-      "RemoteSha": "6ef1ab5b1205bb6e4c1dad98ed1525d73075ee9a",
+      "RemoteSha": "7765f3ddc569eb0e9742bbb564f69b402a0a1f25",
       "RemoteHost": "api.github.com",
       "Requirements": [
         "R.utils",
@@ -1414,7 +1414,7 @@
         "tools",
         "usethis"
       ],
-      "Hash": "d527da13722dbcab28c29c6d889ec280"
+      "Hash": "7a4ce0550a03b67d017dff1e07afb542"
     },
     "rappdirs": {
       "Package": "rappdirs",

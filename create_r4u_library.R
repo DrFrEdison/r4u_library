@@ -84,6 +84,10 @@ file.rename(path1, path2)
 unlink(paste0( dt$pfad$local.lib, "r4u_library.zip"))
 
 # Ordner auf dem Server löschen
-# setwd( paste0(dt$pfad$server, "/", dt$pfad$library))
-# lapply(dir(paste0( dt$pfad$server, "/", dt$pfad$library))[ !dir(paste0( dt$pfad$server, "/", dt$pfad$library)) %in% dt$pfad$systime]
-#        , function( x ) unlink( x, recursive = T, force = T))
+setwd( paste0(dt$pfad$server, "/", dt$pfad$library))
+folder.delete <- dir(paste0( dt$pfad$server, "/", dt$pfad$library))
+folder.delete <- folder.delete[ !folder.delete %in% dt$pfad$systime]
+folder.delete <- folder.delete[ !folder.delete %in% "temp"]
+folder.delete <- grep("\\.R$", folder.delete, value = T, invert = T)
+
+lapply(folder.delete, function( x ) unlink( x, recursive = T, force = T))
