@@ -1,3 +1,4 @@
+renv::status()
 which.to.update <- renv::update()
 # which.to.update <- list(1)
 # names(which.to.update) <- "lubridate"
@@ -25,6 +26,9 @@ dt$pfad$server.lib <- paste0( dt$pfad$server, "/", dt$pfad$library, "/", lib.loc
 setwd( dt$pfad$server.lib )
 for(i in 1 : length( names(which.to.update) ))
   unlink( grep(names(which.to.update)[ i ], dir(), value = T)[ 1 ], recursive = T, force = T)
+
+if( length( grep(names(which.to.update)[ i ], dir()) ) > 0)
+  warning("Folder was not deleted successfully!")
 
 # copy updated package into library
 for(i in 1 : length( names(which.to.update) )){
